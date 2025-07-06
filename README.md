@@ -78,7 +78,7 @@ Install Tailwind CSS dependencies (from the `/MyApp` directory with `package.jso
 ```bash
 cd MyApp
 npm install
-npx tailwindcss -i ./wwwroot/css/site.css -o ./wwwroot/css/output.css --watch
+npx tailwindcss -i ./Styles/input.css -o ./wwwroot/tailwind.css --watch
 ```
 
 > Ensure `site.css` is your Tailwind input file, and `output.css` is used in your layout.
