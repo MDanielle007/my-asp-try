@@ -1,0 +1,59 @@
+﻿@model MyApp.Models.Item
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="max-w-md mx-auto p-6 bg-white rounded-lg shadow-md">
+    <h3 class="text-2xl font-semibold text-gray-800 mb-6">
+        Create an Item
+    </h3>
+
+    <form asp-action="Create" method="post" class="space-y-4">
+        <div class="space-y-2">
+            <label for="Name" class="block text-sm font-medium text-gray-700">Name</label>
+            <input type="text" asp-for="Name"
+                   class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" />
+            <span asp-validation-for="Name" class="text-sm text-red-600"></span>
+        </div>
+
+        <div class="space-y-2">
+            <label for="Description" class="block text-sm font-medium text-gray-700">Description</label>
+            <textarea asp-for="Description" rows="3"
+                      class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"></textarea>
+            <span asp-validation-for="Description" class="text-sm text-red-600"></span>
+        </div>
+
+        <div class="space-y-2">
+            <label for="Type" class="block text-sm font-medium text-gray-700">Type</label>
+            <input type="text" asp-for="Type"
+                   class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" />
+            <span asp-validation-for="Type" class="text-sm text-red-600"></span>
+        </div>
+
+        <div class="space-y-2">
+            <label for="Type" class="block text-sm font-medium text-gray-700">Category</label>
+            <span asp-validation-for="CategoryId" class="text-sm text-red-600"></span>
+            <select 
+                asp-for="CategoryId" 
+                asp-items="ViewBag.Categories" 
+                class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+
+            </select>
+        </div>
+
+        <div class="space-y-2">
+            <label for="Price" class="block text-sm font-medium text-gray-700">Price</label>
+            <input type="number" asp-for="Price"
+                   class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" />
+            <span asp-validation-for="Price" class="text-sm text-red-600"></span>
+        </div>
+
+        <div class="pt-2">
+            <button type="submit"
+                    class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                Submit
+            </button>
+        </div>
+    </form>
+</div>
